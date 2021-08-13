@@ -39,11 +39,11 @@ Your finished project must include all of the following requirements:
 - [ ] Use the endpoint `[GET] https://swapi.dev/api/people` (mocked in [msw](https://github.com/mswjs/msw)) to obtain characters.
 - [ ] Set the list of characters into state.
 - [ ] Render your characters to the DOM:
-
-  1. Build a React component named 'Character' to render an individual character.
-  1. Map over the list in state, and for each character render a Character to the page.
-  1. Each rendered character must display its name in the DOM (e.g. "Luke Skywalker").
-  1. The character's name can't be hard-coded into the HTML. This data must be obtained from the API.
+x
+  1. Build a React component named 'Character' to render an individual character.√
+  1. Map over the list in state, and for each character render a Character to the page.√
+  1. Each rendered character must display its name in the DOM (e.g. "Luke Skywalker").√
+  1. The character's name can't be hard-coded into the HTML. This data must be obtained from the API.√
   1. The components must be styled with **styled-components**.
 
   **Notes:**
@@ -81,6 +81,19 @@ After finishing your required elements, you can push your work further. These go
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
+
+- React is a javascript library built by facebook that helps make user interface easier. For example use react hooks is faster and simpler than using vanilla javascript while also making code reusable
+
 1. Describe component state.
+
+- useState is a way we can update are variables and know the inital value of the given variable. 
+
+
 1. Describe props.
+
+ - Props are shorthand for properties. Props in short are objects/arrays of information that can be passed DOWN to other components.
+
+
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+ - A side effect is anything that affects something outside the scope of the function being executed. To sync effects we pass dependency array as the second arg, the effect will fire after every change.

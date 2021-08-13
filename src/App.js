@@ -1,7 +1,22 @@
-import React from 'react';
+
 import './App.css';
+import React, {useState, useEffect} from "react";
+import axios from "axios";
+import Character from './components/Character';
+import styled from 'styled-components';
+
+const StyledApp = styled.div `
+
+`
+const StyledHeader = styled.h1 `
+font-size: 30px
+`
 
 const App = () => {
+  const [character, setCharacter]=useState([])
+
+
+
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
@@ -9,10 +24,27 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 
+  useEffect(() => {
+    axios.get("https://swapi.dev/api/people")
+    .then(res =>{
+        setCharacter(res.data)
+      
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}, [])
+    
   return (
+    
+    <StyledApp>
     <div className="App">
-      <h1 className="Header">Characters</h1>
+      <StyledHeader>
+      <h1 className="Header">React Wars</h1>
+      </StyledHeader>
+        <Character character={character}/>
     </div>
+    </StyledApp>
   );
 }
 
